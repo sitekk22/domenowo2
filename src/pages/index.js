@@ -3,7 +3,6 @@ import Layout from "./components/Layout";
 import * as styles from "./styles/index.module.scss";
 import Img from "gatsby-image";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useState, useEffect } from "react";
 
 import az from "../images/az.avif";
@@ -48,7 +47,7 @@ const IndexPage = ({ data }) => {
     localStorage.setItem("domain", "");
     localStorage.setItem("startSearch", search);
   }
-  console.log({ data });
+  //console.log({ data });
   return (
     <main style={styles}>
       <Layout>
@@ -215,7 +214,7 @@ const IndexPage = ({ data }) => {
           <div className={styles.faqBox}>
             <h3 className={styles.faqTitle}>Co to jest domena internetowa?</h3>
             <p>
-              Jest to  adres internetowy, który umożliwia użytkownikom
+              Jest to adres internetowy, który umożliwia użytkownikom
               odnalezienie Twojej strony w internecie. Domeny składają się z
               nazwy oraz rozszerzenia, na przykład .com, .net, .org, itp.
             </p>
