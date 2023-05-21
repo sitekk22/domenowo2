@@ -52,9 +52,13 @@ h3.headerLogo {
 .logo {
   margin: auto 0;
   align-self: center;
+  width: 12vw;
+  min-width: 230px;
 }
 footer .logo {
-  padding: 1%
+  padding: 1%;
+  width: 12vw;
+  min-width: 180px;
 }
 
 .links {
@@ -111,7 +115,7 @@ footer {
 }
 .footerBox {
   height: auto;
-  width: 98vw;
+  width: 98%;
   color: #ffffff;
   background-color: #924BFF;
   z-index: 20;
