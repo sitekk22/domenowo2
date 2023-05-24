@@ -1,3 +1,39 @@
+$bg : #f2f2f8;
+$navbar_bg: #001A2E;
+$black: #001220;
+$light_violet: #A66CFF;
+$violet: #741BFF;
+$white: #F3F3F3;
+$paragraph: #585E75;
+$blue: #4D60FC;
+$dark_blue: #4256e9;
+$header: #152244;
+$paragraph_light: #f2f2f2;
+
+
 .copyright {
   font-size: 1rem;
+}
+
+
+main {
+  background-color: $bg;
+  width: fit-content;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+main h1 {
+  font-size: 3rem;
+}
+main p {
+  color: $paragraph;
+  font-size: 1.3rem;
+}
+
+main h3 {
+  font-size: 1.6rem;
+}
+main h2 {
+  font-size: 2rem;
 }

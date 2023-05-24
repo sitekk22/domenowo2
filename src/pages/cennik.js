@@ -84,9 +84,9 @@ export default function Cennik({ data }) {
           <img src={left} className={styles.left} alt="left vector" />
           <div className={styles.centerContainer}>
             <div className={styles.searchContainer}>
-              <span className={styles.searchSpan}>
+              <p className={styles.searchSpan}>
                 Wpisz nazwę swojej wymarzonej domeny
-              </span>
+              </p>
               <div className={styles.searchBG}>
                 <form onSubmit={handleSubmit} className={styles.searchForm}>
                   <input
@@ -150,7 +150,7 @@ export default function Cennik({ data }) {
         </div>
         <div className={styles.faqText}>
           <h3>FAQ</h3>
-          <h2>Najczęściej Zadawane Pytania</h2>
+          <p>Najczęściej Zadawane Pytania</p>
         </div>
         <div class={styles.faqContainer}>
           <div className={styles.faqBox}>

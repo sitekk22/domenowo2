@@ -4,6 +4,7 @@ import * as styles from "./styles/index.module.scss";
 import Img from "gatsby-image";
 import { graphql, Link } from "gatsby";
 import { useState, useEffect } from "react";
+import SearchForm from "./components/searchForm";
 
 import az from "../images/az.avif";
 import dhosting from "../images/dhosting.avif";
@@ -32,7 +33,7 @@ const logasrc = loga.map((loga) => {
 });
 
 const IndexPage = ({ data }) => {
-  const [domain, setDomain] = useState("");
+  /* const [domain, setDomain] = useState("");
   const [search, setSearch] = useState("true");
   function cennik(event) {
     event.preventDefault();
@@ -46,7 +47,7 @@ const IndexPage = ({ data }) => {
   if (typeof window !== "undefined") {
     localStorage.setItem("domain", "");
     localStorage.setItem("startSearch", search);
-  }
+  } */
   //console.log({ data });
   return (
     <main style={styles}>
@@ -59,46 +60,10 @@ const IndexPage = ({ data }) => {
             fluid={data.heroBG.childImageSharp.fluid}
           />
           <h1 className={styles.heroText}>
-            Porównaj ceny domen u różnych rejestratorów z Domenowo, i wybierz
-            najlepszą ofertę
+            Porównaj ceny domen u różnych rejestratorów, i wybierz najlepszą
+            ofertę
           </h1>
-
-          <div className={styles.searchContainer}>
-            <span className={styles.searchSpan}>
-              Wpisz nazwę swojej wymarzonej domeny
-            </span>
-            <div className={styles.searchBG}>
-              <form
-                onSubmit={(event) => cennik(event)}
-                className={styles.searchForm}
-              >
-                <input
-                  autocomplete="off"
-                  htmlFor="domainValue"
-                  type="text"
-                  className={styles.searchInput}
-                  placeholder="np. mojadomena.tld"
-                  value={domain}
-                  onChange={(event) => setDomain(event.target.value)}
-                />
-                <button type="submit" className={styles.searchButton}>
-                  <span>Szukaj</span>
-                  <svg
-                    className={styles.search}
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="48"
-                    viewBox="0 96 960 960"
-                    width="48"
-                  >
-                    <path
-                      d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
+          <SearchForm />
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.infoBox}>
@@ -172,39 +137,7 @@ const IndexPage = ({ data }) => {
               </p>
             </h3>
           </div>
-          <div className={styles.searchContainer}>
-            <div className={styles.searchBG}>
-              <form
-                onSubmit={(event) => cennik(event)}
-                className={styles.searchForm}
-              >
-                <input
-                  autocomplete="off"
-                  htmlFor="domainValue"
-                  type="text"
-                  className={styles.searchInput}
-                  placeholder="np. mojadomena.tld"
-                  value={domain}
-                  onChange={(event) => setDomain(event.target.value)}
-                />
-                <button type="submit" className={styles.searchButton}>
-                  <span>Szukaj</span>
-                  <svg
-                    className={styles.search}
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="48"
-                    viewBox="0 96 960 960"
-                    width="48"
-                  >
-                    <path
-                      d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
+          <SearchForm />
         </div>
         <div className={styles.faqText}>
           <h3>FAQ</h3>
