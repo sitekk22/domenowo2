@@ -1,0 +1,127 @@
+$bg : #f2f2f8;
+$navbar_bg: #001A2E;
+$black: #001220;
+$light_violet: #A66CFF;
+$violet: #741BFF;
+$white: #F3F3F3;
+$paragraph: #585E75;
+$blue: #4D60FC;
+$dark_blue: #4256e9;
+$header: #152244;
+$paragraph_light: #f2f2f2;
+$form: #EFEFEF;
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+}
+
+
+.contactBG { 
+  grid-area: 1 / 1 / 2 / 3; 
+  z-index: 1;}
+
+.text { 
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20%;
+  color: $white;
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 2;
+}
+.text p {
+  color: $paragraph_light;
+  font-size: 1.6rem;
+}
+
+.form { 
+  grid-area: 1 / 2 / 2 / 3; 
+  width: 50%; 
+  margin-top: 15%;
+  margin-left: 10%;
+  z-index: 2;
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 0.2fr 2fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "heading"
+    "inputContainer"
+}
+.contactInput {
+  background: none;
+  border: none;
+  border-bottom: 2px solid $form ;
+}
+
+.heading {
+  grid-area: heading;
+}
+.heading h3 {
+  color: $white;
+  font-size: 2.5rem;
+}
+.heading p {
+  color: $paragraph_light;
+}
+
+.inputContainer {
+  color: $white;
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr ; 
+  gap: 0px 0px; 
+  grid-area: inputContainer; 
+}
+.contactInput{
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 2% 0;
+}
+.contentContainer { 
+  width: 100%;
+}
+.contentContainer p {
+  color: #bf95ff;
+  margin: 1% 0 1% 0.5%;
+}
+.content{
+  min-height: 150px;
+  width: 100%;
+  border: 2px solid $form;
+  border-radius: 7px;
+  color: $header;
+}
+
+.rodo {
+  margin: 2% 0;
+  display: grid; 
+  grid-template-columns: 0.5fr 5.5fr; 
+  grid-template-rows: 1fr; 
+}
+.rodo input {
+  margin: auto auto;
+  width: 20px;
+  height: 20px;
+}
+.rodo a {
+  color: $light_violet;
+}
+.button {
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  width: 50%;
+  min-height: 40px;
+  height: fit-content;
+  font-size: 1.6rem;
+  color: $white;
+  background-color: $blue;
+  text-align: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: $dark_blue;
+}
