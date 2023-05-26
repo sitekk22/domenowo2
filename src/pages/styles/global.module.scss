@@ -37,3 +37,12 @@ main h3 {
 main h2 {
   font-size: 2rem;
 }
+
+
+.footerBG {
+  background-color: $bg;
+  z-index: 1;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+}

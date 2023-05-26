@@ -125,3 +125,16 @@ $form: #EFEFEF;
 .button:hover {
   background-color: $dark_blue;
 }
+main footer img[alt="waves"] {
+  display: none;
+}
+footer {
+  display: flex;
+  height: fit-content;
+  background-color: $navbar_bg;
+  padding: 0.3% 0;
+}
+footer div[class="footerBox"]{
+  margin: 0 auto;
+  background: none;
+} 

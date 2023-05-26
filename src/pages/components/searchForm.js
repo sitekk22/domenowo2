@@ -28,12 +28,12 @@ function SearchForm() {
             htmlFor="domainValue"
             type="text"
             className={styles.searchInput}
-            placeholder="np. mojadomena.tld"
+            placeholder="np. mojadomena.com"
             value={domain}
             onChange={(event) => setDomain(event.target.value)}
           />
           <button type="submit" className={styles.searchButton}>
-            <p>Szukaj</p>
+            <p className="buttonText">Szukaj</p>
             <svg
               className={styles.search}
               xmlns="http://www.w3.org/2000/svg"

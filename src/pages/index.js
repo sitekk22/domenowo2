@@ -202,9 +202,9 @@ export const query = graphql`
         id
       }
     }
-    purposeBG: file(relativePath: { eq: "purposeBG.png" }) {
+    purposeBG: file(relativePath: { eq: "purposeBG.avif" }) {
       childImageSharp {
-        fluid(maxHeight: 800, maxWidth: 1728, quality: 100, pngQuality: 100) {
+        fluid(maxHeight: 800, maxWidth: 1728, quality: 100) {
           ...GatsbyImageSharpFluid
         }
         id
