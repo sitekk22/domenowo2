@@ -88,3 +88,11 @@ $paragraph_light: #f0f0f0;
   color: $white;
   width: 25px;
 }
+
+@media (max-width: 768px) {
+
+  .searchContainer {
+    margin: 0 auto;
+    width: 80vw !important; 
+  }
+}

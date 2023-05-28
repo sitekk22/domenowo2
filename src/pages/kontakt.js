@@ -55,13 +55,24 @@ const Kontakt = ({ data }) => {
             alt="background"
             fluid={data.contactBG.childImageSharp.fluid}
           />
-          <h1 className={styles.text}>
-            Masz pytania, sugestie lub potrzebujesz dodatkowych informacji?
-            <p>
-              Chętnie odpowiemy na Twoje zapytania i zapewnimy Ci niezbędne
-              wsparcie.{" "}
-            </p>
-          </h1>
+          <div className={styles.left}>
+            <h1 className={styles.text}>
+              Masz pytania, sugestie lub potrzebujesz dodatkowych informacji?
+              <p>
+                Chętnie odpowiemy na Twoje zapytania i zapewnimy Ci niezbędne
+                wsparcie.
+              </p>
+            </h1>
+
+            <div className={styles.mailContainer}>
+              <h3>
+                Właścicielem serwisu jest
+                <br />
+                <p>Kamil Sitarz</p>
+                <p>kontakt@domenowo.org</p>
+              </h3>
+            </div>
+          </div>
           <div className={styles.form}>
             <div className={styles.heading}>
               <h3>Formularz kontaktowy</h3>

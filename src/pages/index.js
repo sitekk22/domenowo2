@@ -6,6 +6,8 @@ import { graphql, Link } from "gatsby";
 import { useState, useEffect } from "react";
 import SearchForm from "./components/searchForm";
 
+import leftHero from "../images/leftHero.svg";
+import rightHero from "../images/rightHero.svg";
 import az from "../images/az.avif";
 import dhosting from "../images/dhosting.avif";
 import domenypl from "../images/domenypl.avif";
@@ -53,22 +55,20 @@ const IndexPage = ({ data }) => {
     <main style={styles}>
       <Layout>
         <div className={styles.hero}>
-          <Img
-            className={styles.heroBG}
-            fadeIn={false}
-            alt="background"
-            fluid={data.heroBG.childImageSharp.fluid}
-          />
+          <img src={leftHero} className={styles.heroLeft} />
           <h1 className={styles.heroText}>
             Porównaj ceny domen u różnych rejestratorów, i wybierz najlepszą
             ofertę
           </h1>
-          <SearchForm />
+          <img src={rightHero} className={styles.heroRight} />
+          <div className={styles.jail}>
+            <SearchForm />
+          </div>
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.infoBox}>
             <h2 className={styles.infoTitle}>9</h2>
-            <p className={styles.infoParagraph}>Obsługiwanych rejestratorów</p>
+            <p className={styles.infoParagraph}>Wspieranych rejestratorów</p>
           </div>
           <div className={styles.infoBox}>
             <p className={styles.infoTitle}>70%</p>
@@ -136,8 +136,8 @@ const IndexPage = ({ data }) => {
                 najlepszą dla siebie!
               </p>
             </h3>
+            <SearchForm />
           </div>
-          <SearchForm />
         </div>
         <div className={styles.faqText}>
           <h3>FAQ</h3>
@@ -194,14 +194,6 @@ export default IndexPage;
 
 export const query = graphql`
   query images {
-    heroBG: file(relativePath: { eq: "heroBG.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 859, maxWidth: 1728, quality: 100, pngQuality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-        id
-      }
-    }
     purposeBG: file(relativePath: { eq: "purposeBG.avif" }) {
       childImageSharp {
         fluid(maxHeight: 800, maxWidth: 1728, quality: 100) {

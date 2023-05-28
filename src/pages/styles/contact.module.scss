@@ -20,12 +20,36 @@ $form: #EFEFEF;
 
 .contactBG { 
   grid-area: 1 / 1 / 2 / 3; 
-  z-index: 1;}
+  z-index: 1;
+
+}
+.left {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 2;
+}
+
+.mailContainer {
+  z-index: 2;
+  background-color: $white;
+  width: fit-content;
+  padding: 1%;
+  border-radius: 7px;
+  margin: 25%  0 0 10%;
+}
+
+.mailContainer h3 {
+  color: $header;
+}
+.mailContainer h3 p {
+  font-size: 1.4rem;
+}
+
+
 
 .text { 
   width: 80%;
   margin: 0 auto;
-  margin-top: 20%;
+  margin-top: 15%;
   color: $white;
   grid-area: 1 / 1 / 2 / 2;
   z-index: 2;

@@ -39,10 +39,7 @@ $paragraph_light: #f2f2f2;
     left: 0;
   }
 
-h3.headerLogo {
-  padding: 1%;
-  font-size: 3rem;
-}
+
 
 .copyright{
   grid-area: 2 / 2 / 3 / 3;
@@ -58,7 +55,7 @@ h3.headerLogo {
 footer .logo {
   padding: 1%;
   width: 12vw;
-  min-width: 180px;
+  min-width: 200px;
 }
 
 .links {
@@ -158,4 +155,35 @@ footer h4 {
   text-align: center;
   align-self: center;
   padding-right: 3vw;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    min-width: 0;
+    max-width: 300px;
+    width: 70%;
+    height: auto;
+  }
+  .links a{
+    font-size: 1.5rem;
+  }
+  .logoLink {
+    padding: 2%;
+  }
+  .footerBox {
+    grid-template-columns: 0.5fr 1fr 1fr;
+  }
+  footer .logo {
+    display: none;
+  }
+  .footerLinks a {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width:768px){
+  .footerFavicon {
+    display: none;
+  }
 }

@@ -46,3 +46,19 @@ main h2 {
   height: auto;
   margin: 0;
 }
+@media (max-width:768px){
+  .footerFavicon {
+    margin: 3%;
+  }
+  .logoLink {
+    padding: 10%;
+  }
+}
+@media (min-width:768px){
+  .logoLink {
+    padding: 1%;
+  }
+  .footerFavicon {
+    display: none;
+  }
+}

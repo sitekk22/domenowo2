@@ -5,6 +5,7 @@ import "../styles/global.scss";
 import * as styles from "../styles/global.module.scss";
 import logo from "../images/logo_white.png";
 import footerBG from "../images/footer.svg";
+import favicon from "../images/favicon.avif";
 
 const Layout = (content) => {
   return (
@@ -15,7 +16,12 @@ const Layout = (content) => {
       <footer>
         <img className={styles.footerBG} src={footerBG} alt="waves"></img>
         <div className="footerBox">
-          <Link to="/" className="logo">
+          <Link to="/" className={styles.logoLink}>
+            <img
+              className={styles.footerFavicon}
+              src={favicon}
+              alt="logo"
+            ></img>
             <img className="logo" src={logo} alt="logo domenowo" />
           </Link>
           <h4 className={styles.copyright}>
