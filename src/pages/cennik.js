@@ -59,11 +59,15 @@ export default function Cennik({ data }) {
   var [clicked, setClicked] = useState("ren");
 
   function switchButton(event) {
+    let regm = document.getElementById("regm");
+    let renm = document.getElementById("renm");
     let reg = document.getElementById("reg");
     let ren = document.getElementById("ren");
 
     reg.className = styles.sortButton;
     ren.className = styles.sortButton;
+    regm.className = styles.sortButton;
+    renm.className = styles.sortButton;
 
     event.currentTarget.className = styles.clicked;
     setClicked(event.currentTarget.id);
@@ -83,66 +87,126 @@ export default function Cennik({ data }) {
         <div className={styles.container}>
           <img src={left} className={styles.left} alt="left vector" />
           <div className={styles.centerContainer}>
-            <div className={styles.searchContainer}>
-              <p className={styles.searchSpan}>
-                Wpisz nazwę swojej wymarzonej domeny
-              </p>
-              <div className={styles.searchBG}>
-                <form onSubmit={handleSubmit} className={styles.searchForm}>
-                  <input
-                    htmlFor="domainValue"
-                    type="text"
-                    className={styles.searchInput}
-                    placeholder="twojadomena.tld"
-                    value={domain}
-                    onChange={(event) => setDomain(event.target.value)}
-                  />
-                  <button type="submit" className={styles.searchButton}>
-                    <span>Szukaj</span>
-                    <svg
-                      className={styles.search}
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="48"
-                      viewBox="0 96 960 960"
-                      width="48"
-                    >
-                      <path
-                        d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                </form>
+            <div className={styles.desktop}>
+              <div className={styles.searchContainer}>
+                <p className={styles.searchSpan}>
+                  Wpisz nazwę swojej wymarzonej domeny
+                </p>
+                <div className={styles.searchBG}>
+                  <form onSubmit={handleSubmit} className={styles.searchForm}>
+                    <input
+                      htmlFor="domainValue"
+                      type="text"
+                      className={styles.searchInput}
+                      placeholder="twojadomena.tld"
+                      value={domain}
+                      onChange={(event) => setDomain(event.target.value)}
+                    />
+                    <button type="submit" className={styles.searchButton}>
+                      <span>Szukaj</span>
+                      <svg
+                        className={styles.search}
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48"
+                        viewBox="0 96 960 960"
+                        width="48"
+                      >
+                        <path
+                          d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <div className={styles.sortContainer}>
+                <p className={styles.sortText}>Sortowanie:</p>
+                <button
+                  id="reg"
+                  onClick={switchButton}
+                  className={styles.sortButton}
+                >
+                  <span>Cena rejestracji</span>
+                </button>
+                <button
+                  id="ren"
+                  onClick={switchButton}
+                  className={styles.sortButton}
+                  clicked
+                >
+                  <span>Cena odnowienia</span>
+                </button>
+              </div>
+              <div className={styles.pricesContainer}>
+                {isLoading ? (
+                  <div className={styles.loading}>
+                    <img src={loading}></img>
+                  </div>
+                ) : (
+                  <Ceny prices={prices} sort={clicked} />
+                )}
               </div>
             </div>
-
-            <div className={styles.sortContainer}>
-              <p className={styles.sortText}>Sortowanie:</p>
-              <button
-                id="reg"
-                onClick={switchButton}
-                className={styles.sortButton}
-              >
-                <span>Cena rejestracji</span>
-              </button>
-              <button
-                id="ren"
-                onClick={switchButton}
-                className={styles.sortButton}
-                clicked
-              >
-                <span>Cena odnowienia</span>
-              </button>
-            </div>
-
-            <div className={styles.pricesContainer}>
-              {isLoading ? (
-                <div className={styles.loading}>
-                  <img src={loading}></img>
+            <div className={styles.mobile}>
+              <div className={styles.searchContainer}>
+                <p className={styles.searchSpan}>Wpisz nazwę domeny</p>
+                <div className={styles.searchBG}>
+                  <form onSubmit={handleSubmit} className={styles.searchForm}>
+                    <input
+                      htmlFor="domainValue"
+                      type="text"
+                      className={styles.searchInput}
+                      placeholder="mojadomena.com"
+                      value={domain}
+                      onChange={(event) => setDomain(event.target.value)}
+                    />
+                    <button type="submit" className={styles.searchButton}>
+                      <span>Szukaj</span>
+                      <svg
+                        className={styles.search}
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48"
+                        viewBox="0 96 960 960"
+                        width="48"
+                      >
+                        <path
+                          d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </form>
                 </div>
-              ) : (
-                <Ceny prices={prices} sort={clicked} />
-              )}
+                <div className={styles.sortContainer}>
+                  <p className={styles.sortText}>Sortowanie</p>
+                  <button
+                    id="regm"
+                    onClick={switchButton}
+                    className={styles.sortButton}
+                  >
+                    <span>Cena rejestracji</span>
+                  </button>
+                  <button
+                    id="renm"
+                    onClick={switchButton}
+                    className={styles.sortButton}
+                    clicked
+                  >
+                    <span>Cena odnowienia</span>
+                  </button>
+                </div>
+              </div>
+              <div className={styles.pricesContainer}>
+                {isLoading ? (
+                  <div className={styles.loading}>
+                    <img src={loading}></img>
+                  </div>
+                ) : (
+                  <Ceny prices={prices} sort={clicked} />
+                )}
+              </div>
             </div>
           </div>
 
