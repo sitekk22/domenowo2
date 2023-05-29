@@ -183,9 +183,9 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
         </div>
-        <Link to={"faq"} className={styles.faqButton}>
+        {/* <Link to={"faq"} className={styles.faqButton}>
           Zobacz więcej pytań
-        </Link>
+        </Link> */}
       </Layout>
     </main>
   );
@@ -213,4 +213,10 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <title>Home Page</title>;
+/* export const Head = ({ site }) => (
+  <>
+    <title>Porównaj ceny domen internetowych u rożnych rejestratorów</title>
+    <meta name="description" content={site.siteMetadata.description} />
+  </>
+);
+ */

@@ -29,7 +29,7 @@ const Layout = (content) => {
           </h4>
           <div className="footerLinks">
             <Link to="start">Start</Link>
-            <Link to="faq">FAQ</Link>
+            {/* <Link to="faq">FAQ</Link> */}
             <Link to="kontakt">Kontakt</Link>
           </div>
         </div>

@@ -260,9 +260,9 @@ export default function Cennik({ data }) {
             </p>
           </div>
         </div>
-        <Link to={"faq"} className={styles.faqButton}>
+        {/* <Link to={"faq"} className={styles.faqButton}>
           Zobacz więcej pytań
-        </Link>
+        </Link> */}
       </Layout>
     </main>
   );
