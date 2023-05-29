@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://domenowo.org/sitemap.xml
+Sitemap: https://domenowo.org/sitemap-0.xml
 Host: https://domenowo.org

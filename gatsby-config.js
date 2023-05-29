@@ -59,7 +59,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://domenowo.org",
-        sitemap: "https://domenowo.org/sitemap.xml",
+        sitemap: "https://domenowo.org/sitemap-0.xml",
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
@@ -81,6 +81,45 @@ module.exports = {
         theme_color: "#ffffff",
         display: "standalone",
         icon: "src/images/favicon.png",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+  
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            
+          }
+          
+          `,
+        exclude: ["/components"],
+
+        // Tutaj podajemy link do naszej strony
+        resolveSiteUrl: () => "https://domenowo.org",
+        // W tym miejscu chcemy nadpisać obiekty stron pobrane przez allPages i
+        // przekazać im dane, które pobraliśmy z CMS'a
+
+        // Funkcja serialize, która przekształca dane z naszego query.
+        // To co tutaj zwrócimy będzie wykorzystane do wygenerowania sitemapy.
+        serialize: ({ path, updatedAt }) => {
+          return {
+            url: path,
+            changefreq: "daily",
+            lastmod: updatedAt,
+            priority: 0.7,
+          };
+        },
       },
     },
   ],
