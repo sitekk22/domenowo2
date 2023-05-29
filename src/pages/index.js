@@ -8,6 +8,8 @@ import SearchForm from "./components/searchForm";
 
 import leftHero from "../images/leftHero.svg";
 import rightHero from "../images/rightHero.svg";
+import purposeBG from "../images/purposeBG.avif";
+
 import az from "../images/az.avif";
 import dhosting from "../images/dhosting.avif";
 import domenypl from "../images/domenypl.avif";
@@ -90,6 +92,7 @@ const IndexPage = ({ data }) => {
             alt="background"
             fluid={data.purposeBG.childImageSharp.fluid}
           />
+          <img className={styles.purposeBG} src={purposeBG} alt="background" />
           <div className={styles.purposeBox1}>
             <h2 className={styles.purposeTitle1}>
               Chcesz zaoszczędzić na domenie internetowej?
