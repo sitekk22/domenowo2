@@ -86,6 +86,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
+        excludes: ["/components/**"],
         query: `
           {
             site {
@@ -103,7 +104,6 @@ module.exports = {
           }
           
           `,
-        exclude: ["/components"],
 
         // Tutaj podajemy link do naszej strony
         resolveSiteUrl: () => "https://domenowo.org",
