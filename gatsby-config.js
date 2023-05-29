@@ -55,5 +55,33 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://domenowo.org",
+        sitemap: "https://domenowo.org/sitemap.xml",
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: "*", allow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "domenowo.org",
+        short_name: "domenowo",
+        start_url: "/",
+        background_color: "#fff",
+        theme_color: "#ffffff",
+        display: "standalone",
+        icon: "src/images/favicon.png",
+      },
+    },
   ],
 };
