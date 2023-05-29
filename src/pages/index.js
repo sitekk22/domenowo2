@@ -90,6 +90,7 @@ const IndexPage = ({ data }) => {
             objectPosition="10% 50%"
             fadeIn={false}
             alt="background"
+            loading="eager"
             fluid={data.purposeBG.childImageSharp.fluid}
           />
           {/* <img className={styles.purposeBG} src={purposeBG} alt="background" /> */}
