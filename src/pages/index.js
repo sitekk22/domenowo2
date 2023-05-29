@@ -85,14 +85,14 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div className={styles.purposeContainer}>
-          {/* <Img
+          <Img
             className={styles.purposeBG}
             objectPosition="10% 50%"
             fadeIn={false}
             alt="background"
             fluid={data.purposeBG.childImageSharp.fluid}
-          /> */}
-          <img className={styles.purposeBG} src={purposeBG} alt="background" />
+          />
+          {/* <img className={styles.purposeBG} src={purposeBG} alt="background" /> */}
           <div className={styles.purposeBox1}>
             <h2 className={styles.purposeTitle1}>
               Chcesz zaoszczędzić na domenie internetowej?
@@ -197,7 +197,7 @@ export default IndexPage;
 
 export const query = graphql`
   query images {
-    purposeBG: file(relativePath: { eq: "purposeBG.avif" }) {
+    purposeBG: file(relativePath: { eq: "purposeBG.webp" }) {
       childImageSharp {
         fluid(maxHeight: 800, maxWidth: 1728, quality: 100) {
           ...GatsbyImageSharpFluid
