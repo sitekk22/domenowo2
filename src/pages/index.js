@@ -85,13 +85,13 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div className={styles.purposeContainer}>
-          <Img
+          {/* <Img
             className={styles.purposeBG}
             objectPosition="10% 50%"
             fadeIn={false}
             alt="background"
             fluid={data.purposeBG.childImageSharp.fluid}
-          />
+          /> */}
           <img className={styles.purposeBG} src={purposeBG} alt="background" />
           <div className={styles.purposeBox1}>
             <h2 className={styles.purposeTitle1}>
