@@ -122,5 +122,26 @@ module.exports = {
         },
       },
     },
+    {
+      options: {
+        name: "posts",
+        path: `${__dirname}/src/blog`,
+      },
+      resolve: "gatsby-source-filesystem",
+    },
+    {
+      gatsbyRemarkPlugins: [
+        {
+          options: {
+            maxWidth: 1080,
+          },
+          resolve: "gatsby-remark-images",
+        },
+      ],
+      options: {
+        extensions: [".mdx", ".md", ".markdown"],
+      },
+      resolve: "gatsby-plugin-mdx",
+    },
   ],
 };
