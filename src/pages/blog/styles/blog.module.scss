@@ -1,6 +1,51 @@
+$bg : #f2f2f8;
+$navbar_bg: #001A2E;
+$black: #001220;
+$light_violet: #A66CFF;
+$violet: #741BFF;
+$white: #F3F3F3;
+$paragraph: #2c2c2c;
+$blue: #4D60FC;
+$dark_blue: #4256e9;
+$header: #000033;
+$paragraph_light: #f2f2f2;
+
+
 .blogContainer {
   height: 100vh;
 }
 .recommended {
   margin: 3% 0 0 3%;
+}
+.blogArticles {
+  width: 90vw;
+  height: fit-content;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+}
+.article {
+  margin: 0 auto;
+  padding: 1%;
+  width: 25vw;
+  background-color: #ffffff;
+  color: $header;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 0px 0px 3px 5px rgba(0, 0, 0, 0.05);
+
+}
+.article a {
+  text-decoration: none;
+  color: $paragraph;
+}
+.article a img {
+  width: 100%;
+  height: auto;
+}
+.article a:visited {
+  color: $header;
+}
+.article a p {
+  margin: 7px;
 }
