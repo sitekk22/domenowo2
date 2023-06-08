@@ -47,6 +47,11 @@ $margin_top: 30px;
   font-family: "Poppins", sans-serif;
   line-height: 150%;
 }
+.thumbnail {
+  margin: 0 auto;
+  display: flex;
+}
+
 .blog .ttr {
   position: absolute;
   right: 2%;

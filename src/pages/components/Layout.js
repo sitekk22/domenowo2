@@ -14,7 +14,7 @@ const Layout = (content) => {
       <div className="content">{content.children}</div>
 
       <footer>
-        <img className={styles.footerBG} src={footerBG} alt="waves"></img>
+        {/*  <img className={styles.footerBG} src={footerBG} alt="waves"></img> */}
         <div className="footerBox">
           <Link to="/" className={styles.logoLink}>
             <img

@@ -4,15 +4,18 @@ import { Link } from "gatsby"
 import Layout from "../pages/components/Layout"
 import "../pages/styles/blog.scss"
 import Toc from '../blog/components/toc'
+import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
-function PostTemplate({ data: { mdx }, children }) { 
-  console.log(mdx.fields.timeToRead); 
+function PostTemplate({ data: { mdx },data, children }) { 
+  console.log(data); 
   return (
     <>
     <main className="blog">
       <Layout>
             <div className="contentContainer">
+              <img className="thumbnail" src={data.thumb.publicURL} />
               <h1 className="title"> 
                 {mdx.frontmatter.title}
                 <p className="ttr">artykuł przeczytasz w {" "}
@@ -34,11 +37,14 @@ function PostTemplate({ data: { mdx }, children }) {
 }
 
 export const pageQuery = graphql`
-query PostTemplate($id: String) {
+query PostTemplate($id: String, $thumbnail: String) {
   mdx(id: { eq: $id }) {
     frontmatter {
       title
       beginning
+      thumbnail {
+        relativePath
+      }
     }
     fields {
       timeToRead {
@@ -50,6 +56,10 @@ query PostTemplate($id: String) {
     }
     tableOfContents
     excerpt
+  }
+  thumb: file(relativePath: { eq: $thumbnail }) {
+    publicURL
+    
   }
 }
 `
