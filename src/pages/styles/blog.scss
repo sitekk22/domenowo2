@@ -1,0 +1,123 @@
+$bg : #f2f2f8;
+$navbar_bg: #001A2E;
+$black: #001220;
+$light_violet: #A66CFF;
+$violet: #741BFF;
+$white: #F3F3F3;
+$paragraph: #2c2c2c;
+$blue: #4D60FC;
+$dark_blue: #4256e9;
+$header: #000033;
+$paragraph_light: #f2f2f2;
+
+
+.blog main {
+  scroll-padding-top: 10vh;
+  scroll-behavior: smooth;
+}
+
+.blog .contentContainer {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  border-radius: 7px;
+  position: relative;
+  padding: 1%;
+  width: 70vw;
+  height: fit-content;
+  margin: 5vh auto 0;
+  min-height: 100vh;
+}
+$margin_bot: 4px;
+$margin_top: 30px;
+
+.blog h1 {
+  color: $header !important;
+  margin-bottom: $margin_bot;
+  font-weight: 600 !important;
+}
+.blog h2, .blog h3, .blog h4, .blog h5, .blog h6 {
+  color: $header !important;
+  margin: $margin_top 0 $margin_bot ;
+  font-weight: 600 !important;
+}
+.blog p {
+  color: $paragraph !important;
+  font-weight: 500 !important;
+  font-size: 1.4rem !important;
+  font-family: "Poppins", sans-serif;
+  line-height: 150%;
+}
+.blog .ttr {
+  position: absolute;
+  right: 2%;
+  justify-self: end;
+  width: fit-content;
+  font-size: 1.2rem !important;
+  color: $paragraph;
+}
+.blog .minutes {
+  font-size: 1.4rem !important;
+}
+.blog .title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.toc a:visited {
+  color: $paragraph ;
+  font-size: 1.3rem ;
+}
+.toc a {
+  transition: 0.3s ease;
+  color: $paragraph ;
+  font-size: 1.3rem ;
+}
+.contentContainer .toc a:hover {
+  color: $dark_blue !important;
+}
+.blog .contentContainer p a {
+  color: $blue;
+}
+.blog .contentContainer p a:hover {
+  color: $dark_blue
+}
+.blog .contentContainer p a:visited {
+  color: $blue;
+}
+.toc {
+  margin: 2vh 0;
+}
+.toc a {
+  font-size: 1.4rem !important;
+  margin-left: 10px;
+}
+.toc ol li {
+  counter-increment: item;
+  margin: 2vh;
+  display: flex;
+  align-items: center;
+}
+.toc ol li::before {
+  width: 2.5rem;
+  height: 2.5rem;
+  content: counter(item)  ;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black;
+  color: #ffffff;
+  border: 3px solid $blue;
+  border-radius: 50%;
+}
+
+.toc ol  {
+  list-style: none;
+  counter-reset: item;
+}
+.toc .tocP {
+  color: $paragraph !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px;
+}

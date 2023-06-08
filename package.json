@@ -19,6 +19,7 @@
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.9.1",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-catch-links": "^5.10.0",
     "gatsby-plugin-google-gtag": "^5.9.0",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-manifest": "^5.10.0",
@@ -28,12 +29,17 @@
     "gatsby-plugin-sass": "^6.9.0",
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-plugin-sitemap": "^6.10.0",
+    "gatsby-react-router-scroll": "^6.10.0",
+    "gatsby-remark-autolink-headers": "^6.10.0",
     "gatsby-remark-images": "^7.10.0",
+    "gatsby-remark-table-of-contents": "^2.0.0",
     "gatsby-source-filesystem": "^5.10.0",
+    "gatsby-transformer-remark": "^6.10.0",
     "gatsby-transformer-sharp": "^5.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "reading-time": "^1.5.0",
     "sass": "^1.62.1"
   }
 }

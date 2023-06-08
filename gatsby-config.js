@@ -26,7 +26,6 @@ module.exports = {
         icon: "src/images/favicon.png",
       },
     },
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -36,14 +35,6 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
       __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: `${__dirname}/src/pages/`,
-      },
-      __key: "pages",
     },
     {
       resolve: "gatsby-plugin-google-gtag",
@@ -130,18 +121,27 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
     },
     {
-      gatsbyRemarkPlugins: [
-        {
-          options: {
-            maxWidth: 1080,
-          },
-          resolve: "gatsby-remark-images",
-        },
-      ],
-      options: {
-        extensions: [".mdx", ".md", ".markdown"],
-      },
       resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            options: {
+              maxWidth: 1080,
+              extensions: [".mdx", ".md"],
+            },
+            resolve: "gatsby-remark-images",
+          },
+          "gatsby-remark-autolink-headers",
+        ],
+      },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/templates`,
+      },
+    },
+    "gatsby-react-router-scroll",
+    "gatsby-plugin-catch-links",
   ],
 };
