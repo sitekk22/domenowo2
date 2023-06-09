@@ -77,7 +77,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        excludes: ["/components/**"],
+        excludes: ["/components/**", "/post/"],
         query: `
           {
             site {
@@ -86,9 +86,17 @@ module.exports = {
               }
             }
   
-            allSitePage {
+            allSitePage(filter: {path: {regex: "/^(?!\/blog\/).*/", ne: "/post/"}}) { 
               nodes {
                 path
+              }
+            }
+            allMdx(sort: {frontmatter: {date: DESC}}) {
+              nodes {
+                frontmatter {
+                  date
+                  slug
+                }
               }
             }
             
@@ -100,14 +108,34 @@ module.exports = {
         resolveSiteUrl: () => "https://domenowo.org",
         // W tym miejscu chcemy nadpisać obiekty stron pobrane przez allPages i
         // przekazać im dane, które pobraliśmy z CMS'a
+        resolvePages: ({
+          allMdx: { nodes: mdxs },
+          allSitePage: { nodes: allPages },
+        }) => {
+          const posts = mdxs.map((mdx) => {
+            return {
+              path: mdx.frontmatter.slug,
+              lastmod: mdx.frontmatter.date,
+            };
+          });
 
+          const pages = allPages.map((page) => {
+            return { ...page };
+          });
+          const blog = {
+            path: "/blog/",
+            lastmod: posts[0].lastmod,
+          };
+
+          return [...posts, ...pages, blog];
+        },
         // Funkcja serialize, która przekształca dane z naszego query.
         // To co tutaj zwrócimy będzie wykorzystane do wygenerowania sitemapy.
-        serialize: ({ path, updatedAt }) => {
+        serialize: ({ path, lastmod }) => {
           return {
             url: path,
             changefreq: "daily",
-            lastmod: updatedAt,
+            lastmod: lastmod,
             priority: 0.7,
           };
         },
