@@ -11,8 +11,12 @@ $header: #000033;
 $paragraph_light: #f2f2f2;
 
 
+
 .blogContainer {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content
+  ;
+
 }
 .recommended {
   margin: 3% 0 5% 3%;
@@ -21,6 +25,7 @@ $paragraph_light: #f2f2f2;
 .blogArticles {
   width: 90vw;
   height: fit-content;
+  min-height: 220px;
   margin: 2% auto;
   display: flex;
   flex-direction: row;
@@ -34,11 +39,18 @@ $paragraph_light: #f2f2f2;
   text-align: center;
   border-radius: 7px;
   box-shadow: 0px 0px 1px 5px rgba(0, 0, 0, 0.02);
-
+  
+  
 }
 .article a {
   text-decoration: none;
   color: $paragraph;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.8fr 0.2fr 0.1fr;
+  align-items: center;
+  align-content: space-around;
+  height: 100%;
 }
 .article a img {
   width: 100%;
@@ -49,11 +61,19 @@ $paragraph_light: #f2f2f2;
 }
 .article a p {
   margin: 7px;
+  align-self: center;
 }
 
 @media (max-width: 767px) {
+  
   .article {
-    width: 80vw;
+    width: 45%;
+  }
+  .article h2 {
+    font-size: 1.3rem;
+  }
+  .article p {
+    font-size: 1.1rem;
   }
   
 }
