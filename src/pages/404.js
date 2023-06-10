@@ -34,4 +34,4 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <title>Not found</title>;
+export const Head = () => <title>404 nie znaleziono strony</title>;

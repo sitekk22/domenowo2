@@ -23,7 +23,7 @@ const Seo = ({ title }) => {
   const site = data.site.siteMetadata;
   return (
     <>
-      <title>{site.title}</title>;
+      <title>{site.title}</title>;<html lang="pl"></html>
       <meta name="title" content={site.title} />
       <meta name="description" content={site.description} />
       <meta name="author" content={site.author} />
