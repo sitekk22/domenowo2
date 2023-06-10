@@ -1,17 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Navbar from "./Navbar";
 import "../styles/global.scss";
 import * as styles from "../styles/global.module.scss";
 import logo from "../images/logo_white.png";
 import footerBG from "../images/footer.svg";
 import favicon from "../images/favicon.avif";
-import Seo from "./Seo";
 
 const Layout = (content) => {
   return (
     <div className="layout">
-      <Seo />
       <Navbar />
       <div className="content">{content.children}</div>
 
@@ -37,6 +35,32 @@ const Layout = (content) => {
         </div>
       </footer>
     </div>
+  );
+};
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        keywords
+        siteUrl
+        url
+        image
+      }
+    }
+  }
+`;
+
+export const Head = ({ data }) => {
+  console.log("s");
+  return (
+    <>
+      <title>test</title>
+      {/* <meta name="description" content={site.siteMetadata.description} /> */}
+    </>
   );
 };
 

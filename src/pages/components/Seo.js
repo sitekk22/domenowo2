@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
 
 import { useStaticQuery, graphql, Script } from "gatsby";
 
-const Seo = ({ title, description, image, url }) => {
-  const { site } = useStaticQuery(
+const Seo = ({ title }) => {
+  const data = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,61 +20,23 @@ const Seo = ({ title, description, image, url }) => {
       }
     `
   );
-
-  const seo = [
-    {
-      name: "title",
-      content: title ? title : site.siteMetadata.title,
-    },
-    {
-      name: "description",
-      content: description ? description : site.siteMetadata.description,
-    },
-    {
-      name: "keywords",
-      content: site.siteMetadata.keywords,
-    },
-    {
-      property: "og:title",
-      content: title ? title : site.siteMetadata.title,
-    },
-    {
-      property: "og:description",
-      content: description ? description : site.siteMetadata.description,
-    },
-    {
-      property: "og:image",
-      content: image ? image : site.siteMetadata.image,
-    },
-    {
-      property: "og:type",
-      content: "website",
-    },
-    ,
-    {
-      property: "og:url",
-      content: url ? url : site.siteMetadata.url,
-    },
-    {
-      name: "twitter:creator",
-      content: site.siteMetadata.author,
-    },
-    {
-      name: "twitter:title",
-      content: title ? title : site.siteMetadata.title,
-    },
-    {
-      name: "twitter:description",
-      content: description ? description : site.siteMetadata.description,
-    },
-  ];
-
+  const site = data.site.siteMetadata;
+  console.log(site);
   return (
-    <Helmet
-      title={title ? title : site.siteMetadata.title}
-      meta={seo}
-      htmlAttributes={{ lang: "pl" }}
-    ></Helmet>
+    <>
+      <title>{site.title}</title>;
+      <meta name="title" content={site.title} />
+      <meta name="description" content={site.description} />
+      <meta name="author" content={site.author} />
+      <meta name="keywords" content={site.keywords} />
+      <meta name="og:url" content={site.url} />
+      <meta name="og:type" content="website" />
+      <meta name="og:image" content={site.image} />
+      <meta name="twitter:title" content={site.title} />
+      <meta name="twitter:description" content={site.description} />
+      <meta name="twitter:creator" content={site.author} />
+    </>
   );
 };
+
 export default Seo;

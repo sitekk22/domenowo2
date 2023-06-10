@@ -20,6 +20,8 @@ import ovhcloud from "../images/ovhcloud.avif";
 import seohost from "../images/seohost.avif";
 import thecamels from "../images/thecamels.avif";
 
+import Seo from "./components/Seo";
+
 const loga = [
   az,
   dhosting,
@@ -193,6 +195,9 @@ const IndexPage = ({ data }) => {
     </main>
   );
 };
+export function Head() {
+  return <Seo />;
+}
 export default IndexPage;
 
 export const query = graphql`
@@ -215,11 +220,3 @@ export const query = graphql`
     }
   }
 `;
-
-/* export const Head = ({ site }) => (
-  <>
-    <title>Porównaj ceny domen internetowych u rożnych rejestratorów</title>
-    <meta name="description" content={site.siteMetadata.description} />
-  </>
-);
- */
