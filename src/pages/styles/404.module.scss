@@ -1,0 +1,60 @@
+$bg : #f4f4f8;
+$navbar_bg: #001A2E;
+$black: #001220;
+$light_violet: #A66CFF;
+$violet: #741BFF;
+$white: #F3F3F3;
+$paragraph: #585E75;
+$blue: #4D60FC;
+$dark_blue: #4256e9;
+$header: #152244;
+$paragraph_light: #f0f0f0;
+
+
+.container {
+  width: 90vw;
+  height: 80vh;
+  margin: auto auto;
+}
+
+
+.container{
+  margin: auto auto;
+}
+
+.imgContainer{
+  margin: 10% auto 0;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.button {
+  min-height: 4vh;
+  height: fit-content;
+  min-width: 5vw;
+  width: fit-content;
+  padding: 0.3% 2%;
+  
+  position: absolute;
+  right: 28%;
+  top:62%;
+  color: $white;
+  font-size: 1.4rem;
+  background-color: $blue;
+  border: none;
+  justify-content: center;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: $dark_blue;
+}
+
+
+@media (max-width:1023px){
+
+}
