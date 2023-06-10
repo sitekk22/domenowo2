@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as styles from "./styles/404.module.scss";
 
 const NotFoundPage = ({ data }) => {
-  console.log(data);
   const image404 = getImage(data.image404);
   return (
     <main>

@@ -21,7 +21,6 @@ const Seo = ({ title }) => {
     `
   );
   const site = data.site.siteMetadata;
-  console.log(site);
   return (
     <>
       <title>{site.title}</title>;
