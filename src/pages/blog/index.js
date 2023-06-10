@@ -7,7 +7,10 @@ const IndexPage = ({ data: { allMdx }, data }) => {
   const posts = allMdx.nodes.map((post) => (
     <div className={styles.article}>
       <Link to={post.frontmatter.slug}>
-        <img src={post.frontmatter.thumbnail.publicURL} />
+        <img
+          src={post.frontmatter.thumbnail.publicURL}
+          alt="miniaturka artykułu"
+        />
         <h2>{post.frontmatter.title}</h2>
         <p>{post.frontmatter.date}</p>
       </Link>

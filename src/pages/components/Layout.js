@@ -12,7 +12,6 @@ const Layout = (content) => {
   return (
     <div className="layout">
       <Seo />
-
       <Navbar />
       <div className="content">{content.children}</div>
 

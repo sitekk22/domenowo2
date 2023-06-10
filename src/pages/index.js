@@ -57,12 +57,12 @@ const IndexPage = ({ data }) => {
     <main style={styles}>
       <Layout>
         <div className={styles.hero}>
-          <img src={leftHero} className={styles.heroLeft} />
+          <img src={leftHero} className={styles.heroLeft} alt="blob" />
           <h1 className={styles.heroText}>
             Porównaj ceny domen u różnych rejestratorów, i wybierz najlepszą
             ofertę
           </h1>
-          <img src={rightHero} className={styles.heroRight} />
+          <img src={rightHero} className={styles.heroRight} alt="blob" />
           <div className={styles.jail}>
             <SearchForm />
           </div>
