@@ -6,10 +6,13 @@ import * as styles from "../styles/global.module.scss";
 import logo from "../images/logo_white.png";
 import footerBG from "../images/footer.svg";
 import favicon from "../images/favicon.avif";
+import Seo from "./Seo";
 
 const Layout = (content) => {
   return (
     <div className="layout">
+      <Seo />
+
       <Navbar />
       <div className="content">{content.children}</div>
 

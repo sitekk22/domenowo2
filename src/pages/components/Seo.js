@@ -24,6 +24,10 @@ const Seo = ({ title, description, image, url }) => {
 
   const seo = [
     {
+      name: "title",
+      content: title ? title : site.siteMetadata.title,
+    },
+    {
       name: "description",
       content: description ? description : site.siteMetadata.description,
     },
