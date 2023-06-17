@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import * as styles from "./styles/blog.module.scss";
 import { graphql, Link } from "gatsby";
+import Seo from "../components/Seo";
 
 const IndexPage = ({ data: { allMdx }, data }) => {
   const posts = allMdx.nodes.map((post) => (
@@ -44,4 +45,9 @@ export const query = graphql`
     }
   }
 `;
+
+export function Head() {
+  return <Seo />;
+}
+
 export default IndexPage;

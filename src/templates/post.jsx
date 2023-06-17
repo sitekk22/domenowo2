@@ -7,9 +7,10 @@ import Toc from '../blog/components/toc'
 import Img from "gatsby-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import Seo from "../pages/components/Seo";
 
-function PostTemplate({ data: { mdx },data, children }) { 
-  console.log(data); 
+
+const PostTemplate = ({ data: { mdx },data, children }) => { 
   return (
     <>
     <main className="blog">
@@ -63,5 +64,14 @@ query PostTemplate($id: String, $thumbnail: String) {
   }
 }
 `
+export function Head() {
+  return( 
+    <>
+    <Seo />
+    <title>blog</title>
+    <html lang="pl" e></html>
+    </>)
+     
+}
 
-export default PostTemplate
+export default PostTemplate;

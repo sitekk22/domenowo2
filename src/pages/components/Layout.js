@@ -54,14 +54,4 @@ export const query = graphql`
   }
 `;
 
-export const Head = ({ data }) => {
-  console.log("s");
-  return (
-    <>
-      <title>test</title>
-      {/* <meta name="description" content={site.siteMetadata.description} /> */}
-    </>
-  );
-};
-
 export default Layout;
