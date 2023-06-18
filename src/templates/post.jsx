@@ -64,14 +64,11 @@ query PostTemplate($id: String, $thumbnail: String) {
   }
 }
 `
-export function Head() {
+export function Head({ data: { mdx }}) {
   return( 
     <>
-    <Seo />
-    <title>blog</title>
-    <html lang="pl" e></html>
+    <Seo title={mdx.frontmatter.title}/>
     </>)
-     
 }
 
 export default PostTemplate;

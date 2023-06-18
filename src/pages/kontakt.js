@@ -4,6 +4,7 @@ import * as styles from "./styles/contact.module.scss";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import axios from "axios";
+import Seo from "./components/Seo";
 
 const Kontakt = ({ data }) => {
   var [dane, setName] = useState();
@@ -167,5 +168,9 @@ export const query = graphql`
     }
   }
 `;
+
+export function Head() {
+  return <Seo title="Skontaktuj się z nami" />;
+}
 
 export default Kontakt;
