@@ -67,7 +67,7 @@ query PostTemplate($id: String, $thumbnail: String) {
 export function Head({ data: { mdx }}) {
   return( 
     <>
-    <Seo title={mdx.frontmatter.title}/>
+    <Seo title={mdx.frontmatter.title} description={mdx.frontmatter.beginning}/>
     </>)
 }
 

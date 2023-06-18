@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { useStaticQuery, graphql, Script } from "gatsby";
 
-const Seo = ({ title }) => {
+const Seo = ({ title, description }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -26,7 +26,10 @@ const Seo = ({ title }) => {
       <title>{title ? title : site.title}</title>
       <html lang="pl" e></html>
       <meta name="title" content={site.title} />
-      <meta name="description" content={site.description} />
+      <meta
+        name="description"
+        content={description ? description : site.description}
+      />
       <meta name="author" content={site.author} />
       <meta name="keywords" content={site.keywords} />
       <meta name="og:url" content={site.url} />
