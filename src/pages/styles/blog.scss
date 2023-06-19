@@ -86,13 +86,13 @@ $margin_top: 30px;
 .contentContainer .toc a:hover {
   color: $dark_blue !important;
 }
-.blog .contentContainer p a {
+.blog .contentContainer p a, .blog ul li a {
   color: $blue;
 }
-.blog .contentContainer p a:hover {
+.blog .contentContainer p a:hover, .blog ul li a {
   color: $dark_blue
 }
-.blog .contentContainer p a:visited {
+.blog .contentContainer p a:visited, .blog ul li a {
   color: $blue;
 }
 .toc {
