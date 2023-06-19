@@ -35,7 +35,7 @@ $margin_top: 30px;
   margin-bottom: $margin_bot;
   font-weight: 600 !important;
 }
-.blog h2, .blog h3, .blog h4, .blog h5, .blog h6 {
+.blog .content h2, .blog .content h3, .blog .content h4, .blog .content h5, .blog .content h6 {
   color: $header !important;
   margin: $margin_top 0 $margin_bot ;
   font-weight: 600 !important;
@@ -71,7 +71,9 @@ $margin_top: 30px;
   display: flex;
   flex-direction: row;
 }
-
+.blog .copyright {
+  color: $paragraph_light !important;
+}
 .toc a:visited {
   color: $paragraph ;
   font-size: 1.3rem ;
