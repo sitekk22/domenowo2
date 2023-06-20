@@ -46,8 +46,7 @@ export const query = graphql`
   }
 `;
 
+export default IndexPage;
 export function Head() {
   return <Seo />;
 }
-
-export default IndexPage;
