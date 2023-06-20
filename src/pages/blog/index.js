@@ -4,7 +4,7 @@ import * as styles from "./styles/blog.module.scss";
 import { graphql, Link } from "gatsby";
 import Seo from "../components/Seo";
 
-const IndexPage = ({ data: { allMdx }, data }) => {
+const BlogPage = ({ data: { allMdx } }) => {
   const posts = allMdx.nodes.map((post) => (
     <div className={styles.article}>
       <Link to={post.frontmatter.slug}>
@@ -29,6 +29,17 @@ const IndexPage = ({ data: { allMdx }, data }) => {
     </main>
   );
 };
+
+export function Head() {
+  return (
+    <Seo
+      title="Wpisy na blogu Domenowo"
+      description="Artykuły o domenach, bezpieczeństwie oraz branży informatycznej"
+    />
+  );
+}
+export default BlogPage;
+
 export const query = graphql`
   query MyQuery {
     allMdx {
@@ -45,8 +56,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default IndexPage;
-export function Head() {
-  return <Seo />;
-}

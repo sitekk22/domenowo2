@@ -1,6 +1,5 @@
 import * as React from "react";
-
-import { useStaticQuery, graphql, Script } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Seo = ({ title, description }) => {
   const data = useStaticQuery(
@@ -25,7 +24,7 @@ const Seo = ({ title, description }) => {
     <>
       <title>{title ? title : site.title}</title>
       <html lang="pl" e></html>
-      <meta name="title" content={site.title} />
+      <meta name="title" content={title ? title : site.title} />
       <meta
         name="description"
         content={description ? description : site.description}
@@ -35,8 +34,11 @@ const Seo = ({ title, description }) => {
       <meta name="og:url" content={site.url} />
       <meta name="og:type" content="website" />
       <meta name="og:image" content={site.image} />
-      <meta name="twitter:title" content={site.title} />
-      <meta name="twitter:description" content={site.description} />
+      <meta name="twitter:title" content={title ? title : site.title} />
+      <meta
+        name="twitter:description"
+        content={description ? description : site.description}
+      />
       <meta name="twitter:creator" content={site.author} />
     </>
   );
