@@ -196,7 +196,12 @@ const IndexPage = ({ data }) => {
   );
 };
 export function Head() {
-  return <Seo />;
+  return (
+    <>
+      <Seo />
+      <link rel="canonical" href="https://www.domenowo.org" />
+    </>
+  );
 }
 export default IndexPage;
 
